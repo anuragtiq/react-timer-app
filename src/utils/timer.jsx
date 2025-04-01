@@ -2,7 +2,7 @@ import React from 'react'
 import '../App.css'
 
 const Timer = (props) => {
-    const { newTimer, setNewTimer, timersStore, setTimersStore } = props;
+    const { newTimer, setNewTimer, timersStore, setTimersStore, setAtleastOne } = props;
 
     //Addition of new Timer
     const handleAddTimer = () => {
@@ -21,13 +21,14 @@ const Timer = (props) => {
 
         setTimersStore([...timersStore, timerToAdd]);
         setNewTimer({ name: '', duration: '', category: '' });
+        setAtleastOne(true);
     };
 
     return (
         <>
-        <h4 className='timer-titles'>
+        <h3 className='timer-titles'>
             Add Timer
-        </h4>
+        </h3>
         <div className="timer-form">
             <input
                 type="text"

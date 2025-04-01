@@ -9,7 +9,7 @@ const History = ({ history }) => {
 
     return (
         <>
-            <h4 className='timer-titles'>Timer History</h4>
+            <h3 className='timer-titles'>Timer History</h3>
             <div className='history-block'>
                 <table className='history-table'>
                     <thead>

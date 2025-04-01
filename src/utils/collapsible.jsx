@@ -3,7 +3,7 @@ import '../App.css';
 
 
 const Collapsible = (props) => {
-    const { timersStore, setTimersStore, setHistory} = props;
+    const { timersStore, setTimersStore, setHistory, atleastOne } = props;
     const [expandedCategories, setExpandedCategories] = useState({});
 
 
@@ -140,8 +140,9 @@ const Collapsible = (props) => {
 
     return (
         <>
-            <h4 className="timer-titles">Timer Management</h4>
-            <div className="collapsible-container">
+            <h3 className="timer-titles">Timer Management</h3>
+            {atleastOne ? (
+                <div className="collapsible-container">
                 {Object.entries(groupedTimers).map(([category, categoryTimers]) => (
                     <div key={category} className="category-section">
                         <div
@@ -240,7 +241,10 @@ const Collapsible = (props) => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div>):(
+                <div className="no-timers">No Timers added yet..</div>
+            )}
+
         </>
     );
 }

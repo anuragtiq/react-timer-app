@@ -12,6 +12,7 @@ const TimerApp = () => {
     duration: '',
     category: ''
   });
+  const [atleastOne, setAtleastOne] = useState(false);
   
 
   // 3 useEffect for Load timers and history from localStorage on initial load + Save timers changes + Save history changes
@@ -41,12 +42,14 @@ const TimerApp = () => {
           setNewTimer={setNewTimer}
           timersStore={timersStore}
           setTimersStore={setTimersStore}
+          setAtleastOne={setAtleastOne}
         />
 
         <Collapsible 
           timersStore={timersStore}
           setTimersStore={setTimersStore}
           setHistory={setHistory}
+          atleastOne={atleastOne}
         />
 
         <History 
